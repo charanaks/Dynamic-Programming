@@ -11,3 +11,17 @@ for i in range(len(wt)+1):
         else:
             dp[i][j]=max(dp[i-1][j],dp[i-1][j-wt[i-1]]+v[i-1])
 print(dp[len(wt)][bw])
+a=dp[-1][-1]
+i=len(wt)-1
+j=bw
+b=[]
+while(j>=0 and i>=0):
+	if dp[i][j]==a:
+		i=i-1
+	else:
+		b.append(wt[i])
+		a=dp[i][j-wt[i]]
+		j=j-wt[i]
+for _ in range(len(b)):
+	print(b.pop(),end=' ')
+	
