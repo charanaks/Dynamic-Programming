@@ -13,6 +13,6 @@ for i in range(1,len(l)+1):
         else:
             dp[i][j]=dp[i-1][j]
 if dp[-1][-1]==m:
-    print("0") #not possible
+    print("-1") #not possible
 else:
     print(dp[-1][-1])
